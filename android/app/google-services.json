@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "263464131065",
+    "project_id": "loop-df308",
+    "storage_bucket": "loop-df308.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263464131065:android:ffdb081c21b2fb72960528",
+        "android_client_info": {
+          "package_name": "com.vanka.loop.loop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpxJ79XCnl4r8xTAkhM_sn-thbdJLuJxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
