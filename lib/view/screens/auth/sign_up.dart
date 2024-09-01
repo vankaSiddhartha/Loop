@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import '../../../constants.dart';
 import '../../wedgets/TextInputField.dart';
 
@@ -8,6 +9,7 @@ class SignUp extends StatelessWidget {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passController = TextEditingController();
+  late Rx<String?> profileLink;
 
   @override
   Widget build(BuildContext context) {
@@ -40,13 +42,15 @@ class SignUp extends StatelessWidget {
                 children: [
                   const CircleAvatar(
                     radius: 64,
-                    backgroundImage: NetworkImage('https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Photo.png'),
+                    backgroundImage: NetworkImage(  'https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Photo.png' ),
                     backgroundColor: kBackgroundColor,
                   ),
                   Positioned(
                     bottom: -10,
                     left: 80,
-                    child: IconButton(onPressed: (){}, icon: const Icon(Icons.add_a_photo)),
+                    child: IconButton(onPressed: (){
+                      authController.pickImg();
+                    }, icon: const Icon(Icons.add_a_photo)),
                   )
                 ],
               ),
@@ -76,11 +80,12 @@ class SignUp extends StatelessWidget {
                   color: kIconColorActive,
                   child: InkWell(
                     onTap: () {
-                      print("hello");
+                       authController.signUp(nameController.text, emailController.text, passController.text, authController.profile);
+                       Rx<String>(authController.profileLink.toString());
                     },
                     child: Center(
                       child: Text(
-                        "Login",
+                        "Sign Up",
                         style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600, color: kBackgroundColor),
                       ),
                     ),

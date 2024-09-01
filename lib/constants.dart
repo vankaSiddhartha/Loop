@@ -1,4 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:loop/controller/auth_controller.dart';
 
 // Primary app color: A bold, attention-grabbing purple
 const Color kPrimaryColor = Color(0xFF8E44AD);
@@ -20,3 +24,9 @@ const Color kIconColorInactive = Color(0xFF757575); // Gray for inactive icons
 
 // Overlay color for video controls
 const Color kVideoOverlayColor = Color(0x66000000); // Semi-transparent black
+//Firebase
+final firebaseAuth = FirebaseAuth.instance;
+final firebaseStorage = FirebaseStorage.instance;
+final firebaseFireStore = FirebaseFirestore.instance;
+//get
+final authController = AuthController.instance;

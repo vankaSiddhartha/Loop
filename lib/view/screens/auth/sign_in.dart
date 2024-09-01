@@ -47,7 +47,7 @@ class SignIn extends StatelessWidget {
 
               child: InkWell(
                 onTap: (){
-                  print("hello");
+                  authController.login(emailController.text, passController.text);
                 },
                 child: Center(
                   child: Text("Login", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600,color: kBackgroundColor),),
